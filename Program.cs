@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using EmptyWebApplication.Models;
 
 namespace EmptyWebApplication
 {
@@ -12,6 +13,11 @@ namespace EmptyWebApplication
     {
         public static void Main(string[] args)
         {
+           TodoItem todoItem = new TodoItem();
+           todoItem.Key = "key";
+           todoItem.Name = "name";
+           todoItem.IsComplete = true;
+           
            var config = new ConfigurationBuilder()
                 .AddCommandLine(args)
                 .AddEnvironmentVariables(prefix: "ASPNETCORE_")
